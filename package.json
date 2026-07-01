@@ -1,0 +1,33 @@
+{
+  "name": "gaokao-volunteer-advisor",
+  "version": "1.0.0",
+  "description": "高考志愿填报统一 skill：评估志愿表、冲稳保推荐、ADI 四维匹配、社会现实对照",
+  "homepage": "https://github.com/kylin-l/gaokao-volunteer-skills",
+  "keywords": [
+    "gaokao",
+    "高考",
+    "高考志愿",
+    "志愿填报",
+    "志愿评估",
+    "志愿推荐",
+    "冲稳保",
+    "选专业",
+    "选校",
+    "位次匹配",
+    "平行志愿",
+    "专业选择",
+    "职业规划",
+    "就业指导",
+    "退档风险",
+    "院校专业组",
+    "ADI",
+    "cursor-skill",
+    "agent-skill"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate-frontmatter.mjs",
+    "publish:dry-run": "skillhub publish . --host https://api.skillhub.cn --dry-run",
+    "publish": "skillhub publish . --host https://api.skillhub.cn"
+  }
+}
