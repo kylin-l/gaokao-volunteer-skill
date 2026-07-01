@@ -26,7 +26,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "validate": "node scripts/validate-frontmatter.mjs",
+    "validate": "node scripts/validate-frontmatter.mjs && node scripts/check-links.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "prepare:publish": "node scripts/prepare-publish.mjs",
     "publish:dry-run": "npm run validate && npm run prepare:publish && skillhub publish .skillhub-publish --host https://api.skillhub.cn --dry-run",
     "publish": "npm run validate && npm run prepare:publish && skillhub publish .skillhub-publish --host https://api.skillhub.cn"
