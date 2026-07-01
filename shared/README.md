@@ -17,6 +17,7 @@
 | `adi-assessment.md` | ADI 四维专业匹配 |
 | `weight-framework.md` | 评估/推荐/ADI 权重 |
 | `rank-adjustment.md` | 位次匹配与计划调整 |
+| `structure-sanity-check.md` | 志愿结构合理性检查（冲稳保/保垫/层级对齐） |
 | `national-policy-quickref.md` | 全国志愿模式速查 |
 | `data-query.md` | 真实数据查询流程 |
 | `official-sources.md` | 官方信息源优先级 |
@@ -33,13 +34,13 @@
 特殊身份？ → special-admissions.md + physical-exam-majors.md
 分省规则 → province-volunteer-checklist.md
 查真实数据 → data-query.md + official-sources.md
-位次匹配 → rank-adjustment.md + ../reference.md
+位次匹配 → rank-adjustment.md + structure-sanity-check.md + ../reference.md
 专业/就业 → career-prospects-6d.md + social-reality/* 分册
 新专业 → new-major-guide.md（**2026目录**）+ social-reality/new-majors-2026.md
 专业去留 → adi-assessment.md
 权重评级 → weight-framework.md
 压线/专科 → workflows/supplemental-batches.md
-输出 → templates/* + anti-hallucination.md
+输出 → templates/* + anti-hallucination.md + structure-sanity-check.md
 ```
 
 ## 模板目录

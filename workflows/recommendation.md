@@ -14,13 +14,13 @@
 Step 0  场景识别 → 决策赛道；**特殊身份** → [special-admissions.md](../shared/special-admissions.md)
 Step 1  intake-8d + guided-discovery；**分省规则** → [province-volunteer-checklist.md](../shared/province-volunteer-checklist.md)；**体检按需**（见 intake-8d，非默认追问）
 Step 2  政策检索（national-policy-quickref + WebSearch）
-Step 3  data-query → 可行集 + rank-adjustment 计划调整
+Step 3  data-query → 可行集 + rank-adjustment 计划调整 + **输入自洽**（intake-8d）
 Step 4  2–3 个方向包 + social-reality 确认
 Step 5  用户选定 → ADI 筛查 + 专业过滤 + **2026目录新增专业五步筛查**（[new-major-guide.md](../shared/new-major-guide.md)）
-Step 6  按赛道权重排序 → 冲稳保分配
-Step 7  推荐卡片 + [candidate-matrix.md](../shared/templates/candidate-matrix.md)
+Step 6  按赛道权重排序 → 冲稳保分配 + **[structure-sanity-check.md](../shared/structure-sanity-check.md) 结构门禁**
+Step 7  推荐卡片 + [candidate-matrix.md](../shared/templates/candidate-matrix.md)（层级须与位次偏差率一致）
 Step 8  起草交付物 + family-brief + risk-notes
-Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evaluation 终审
+Step 9  anti-hallucination 自检 + **结构合理性复检**（通过后方可交付）→ 建议走 evaluation 终审
 ```
 
 ## 决策赛道
@@ -75,6 +75,18 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 
 原则：最想去的放前；默认建议服从调剂；保垫位次低于考生。
 
+## 结构合理性门禁（Step 6 必过）
+
+加载 [structure-sanity-check.md](../shared/structure-sanity-check.md)，至少核对：
+
+1. **保+垫充足**（压线生保+垫 ≥50%）
+2. **层级↔位次**：每条志愿算偏差率，禁止名稳实冲
+3. **调剂**：不服从 + 组内跨度大 → risk-notes 标退档
+4. **2026 探索**：首招无位次不得占稳/保
+5. **方向包一致**：矩阵主力与 Step4 选定方向对齐
+
+不通过 → 回到 Step 6 调整，或降级为 data-check + 方向建议。
+
 ## 推荐卡片
 
 ```markdown
@@ -122,6 +134,6 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 
 ## 谨慎交付
 
-- Step 9 自检未通过 → **不得**交付含具体校名的方案
+- Step 9 自检或 **结构门禁**未通过 → **不得**交付含具体校名的方案
 - ADI ❌ 专业默认不进冲/稳/保主力；用户坚持须书面确认
 - 缺位次 → 只输出 data-check，不给候选矩阵

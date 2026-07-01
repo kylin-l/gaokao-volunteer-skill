@@ -11,14 +11,14 @@
 ## 流程
 
 ```
-Step 0  intake-8d + data-query 查真实位次/批次线
+Step 0  intake-8d + data-query 查真实位次/批次线 + **输入自洽**
 Step 1  规则合规（national-policy-quickref + 招生章程）；**体检按需** → 见下节
-Step 2  位次匹配 + 冲稳保（rank-adjustment，含计划调整）
-Step 3  结构梯度 + 退档/滑档风险
+Step 2  位次匹配 + 冲稳保（rank-adjustment，含计划调整 + **层级↔位次对齐**）
+Step 3  **[structure-sanity-check.md](../shared/structure-sanity-check.md) 结构梯度 + 退档/滑档风险**
 Step 4  社会现实 + ADI 四维（adi-assessment + social-reality-guide + career-prospects-6d + **new-major-guide** 若含 2026目录新增）
 Step 5  按 weight-framework 加权评级 + 起草报告（risk-notes 模板）
 Step 6  评级 D/F 或 ADI ❌ 过多 → 切 recommendation，终止本流程
-Step 7  anti-hallucination 自检（通过后方可交付）
+Step 7  anti-hallucination 自检 + **结构合理性复检**（通过后方可交付）
 ```
 
 ## Step 4：社会现实 + ADI 校验（必做）
@@ -45,6 +45,20 @@ Step 7  anti-hallucination 自检（通过后方可交付）
 |------|------|
 | 志愿含军警/医学/航海/飞行/消防/公安/化学师范等，或用户提及视力色觉身高 | 加载 [physical-exam-majors.md](../shared/physical-exam-majors.md)；缺结论 → 报告标「待核验」 |
 | 普通专业、无体检相关信号 | 不追问；报告脚注提醒填报前核对体检表与章程 |
+
+## Step 3：结构合理性（必过）
+
+加载 [structure-sanity-check.md](../shared/structure-sanity-check.md)。重点：
+
+| 检查 | 写入报告位置 |
+|------|--------------|
+| 保垫、梯度、全冲全保 | 七、结构问题与优化 |
+| 层级↔位次逐项复核 | 四、志愿逐项分析 |
+| 调剂退档、大类分流 | 风险摘要 + 四 |
+| 2026 探索占稳保 | 七点五 + 七 |
+| 预算/考公目标不一致 | 三、方案评级表扣分项 |
+
+多项不通过 → 录取安全维度重扣，可能 D 级。
 
 ## 评级
 
@@ -109,6 +123,6 @@ Step 7  anti-hallucination 自检（通过后方可交付）
 ## 谨慎交付
 
 - Step 6 触发 → 不进入 Step 7，改走 recommendation
-- Step 7 自检未通过 → **不得**输出含具体校名的最终报告
+- Step 7 自检或 **结构检查**未通过 → **不得**输出含具体校名的最终报告
 - 规则合规 ❌ → 评级 **F**，优先列必须修改项
 - 数据缺口多 → 降级为「待查清单 + 方向建议」，不给精确冲稳保序号

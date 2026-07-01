@@ -1,7 +1,7 @@
 ---
 slug: gaokao-volunteer-er
 displayName: 高考志愿 · 评估与推荐
-version: 1.3.2
+version: 1.3.3
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
@@ -141,6 +141,7 @@ name: gaokao-volunteer-er
 | [shared/province-volunteer-checklist.md](shared/province-volunteer-checklist.md) | 分省志愿差异 |
 | [workflows/supplemental-batches.md](workflows/supplemental-batches.md) | 专科批与征集 |
 | [shared/new-major-guide.md](shared/new-major-guide.md)   | **2026** 目录新增专业五步筛查 |
+| [shared/structure-sanity-check.md](shared/structure-sanity-check.md) | 志愿结构合理性检查 |
 | [examples.md](examples.md)                                 | 15 个完整对话实例 |
 | [reference.md](reference.md)                               | 规则术语                   |
 

@@ -10,6 +10,8 @@
 | 名称陷阱 | 录非预期专业 | 专业名相似 | 见 career-prospects-6d |
 | ADI 不匹配 | 能进但不该读 | A/D/I/R 任一 ≤2 | 见 adi-assessment |
 | 就业错配 | 4 年后难就业 | 未做社会现实校验 | 见 social-reality-guide |
+| 结构失衡 | 滑档/重冲轻保 | 未过 structure-sanity-check | 见 structure-sanity-check |
+| 层级错位 | 标稳实冲 | 未算位次偏差率 | 见 rank-adjustment |
 
 ## 待核验清单
 
