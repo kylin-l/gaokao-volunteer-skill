@@ -1,13 +1,13 @@
-# 高考志愿 Skill 包（gaokao-volunteer-advisor）
+# 高考志愿 Skill 包（gaokao-volunteer-er）
 
 统一 Cursor Agent Skill：自动路由**志愿评估**与**冲稳保推荐**，含 ADI 四维专业匹配、权重框架、反幻觉与谨慎交付规范。
 
 
 | 字段              | 值                                                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
-| **slug**        | `gaokao-volunteer-advisor`（SkillHub 全站唯一标识，**首次发布后不可改**）                                                 |
+| **slug**        | `gaokao-volunteer-er`（SkillHub 全站唯一标识，**首次发布后不可改**）                                                 |
 | **version**     | `1.0.0`（与 `SKILL.md` / `package.json` 同步）                                                                |
-| **displayName** | 高考志愿规划 · 冲稳保评估与推荐                                                                                        |
+| **displayName** | 高考志愿 · 评估与推荐                                                                                          |
 | **GitHub**      | [https://github.com/kylin-l/gaokao-volunteer-skills](https://github.com/kylin-l/gaokao-volunteer-skills) |
 
 
@@ -44,16 +44,16 @@
 
 ```bash
 # 安装 CLI（见下方「发布」一节）
-skillhub install gaokao-volunteer-advisor --scope user
+skillhub install gaokao-volunteer-er --scope user
 ```
 
 ### GitHub 手动安装（Cursor）
 
 ```bash
-git clone https://github.com/kylin-l/gaokao-volunteer-skills.git ~/.cursor/skills/gaokao-volunteer-advisor
+git clone https://github.com/kylin-l/gaokao-volunteer-skills.git ~/.cursor/skills/gaokao-volunteer-er
 ```
 
-安装目录名须与 `slug` 一致：`gaokao-volunteer-advisor`。
+安装目录名须与 `slug` 一致：`gaokao-volunteer-er`。
 
 ---
 
@@ -110,20 +110,22 @@ skillhub auth login --token "$SKILLHUB_KEY" --host "https://api.skillhub.cn"
 
 ### 4. 校验与发布
 
-在**本仓库根目录**（含 `SKILL.md`）执行：
+SkillHub 仅允许特定扩展名（`.md`、`.json`、`.js` 等），**不可**直接发布含 `.gitignore` 或无扩展名 `LICENSE` 的仓库根目录。请使用 staging 脚本：
 
 ```bash
 npm run validate
 
-# dry-run（release.md 推荐）
-skillhub publish . --host "https://api.skillhub.cn" --dry-run
-# 旧 CLI：--registry https://api.skillhub.cn
+# dry-run（推荐先跑）
+npm run publish:dry-run
 
-# 正式发布
-skillhub publish . --host "https://api.skillhub.cn"
+# 正式发布（可加 --changelog）
+npm run prepare:publish
+skillhub publish .skillhub-publish --host "https://api.skillhub.cn" --changelog "首次发布"
 # 或
 npm run publish
 ```
+
+`prepare:publish` 会生成 `.skillhub-publish/`，仅包含白名单内文件；许可证见 `LICENSE.md`。
 
 ### 5. 发布后
 
@@ -136,9 +138,10 @@ npm run publish
 ### Web UI 备选
 
 1. [https://skillhub.cn](https://skillhub.cn) → 发布
-2. 上传 zip（排除 `.git`）：
+2. 上传 zip（排除 `.git`、`.gitignore`；或使用 `npm run prepare:publish` 后打包 `.skillhub-publish/`）：
   ```bash
-   zip -r gaokao-volunteer-advisor-1.0.0.zip . -x "*.git*" -x "node_modules/*" -x "*.zip"
+   npm run prepare:publish
+   cd .skillhub-publish && zip -r ../gaokao-volunteer-er-1.0.0.zip . && cd ..
   ```
 
 ### Windows 注意

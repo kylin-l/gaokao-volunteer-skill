@@ -42,6 +42,20 @@
 | 综合评价/强基 | 校测+高考加权；需提前报名 |
 | 专项计划 | 农村/地方专项；户籍学籍双满足 |
 
+## 照顾政策（须当年文件）
+
+| 类型 | 核对 |
+|------|------|
+| 加分 | 省招办加分政策；投档是否带加分 |
+| 少数民族 | 预科/民族班单独代码 |
+| 烈士子女等 | 资格证明 |
+
+## 分省与体检
+
+- 分省志愿差异 → [province-volunteer-checklist.md](province-volunteer-checklist.md)
+- 体检受限 → [physical-exam-majors.md](physical-exam-majors.md)
+- 特殊招生详解 → [special-admissions.md](special-admissions.md)
+
 ## 平行志愿核心一句
 
 **分数优先，遵循志愿，一轮投档** — 同批只有一次投档机会，顺序仍重要。

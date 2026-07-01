@@ -29,6 +29,7 @@
 ```
 3. 中位数毕业生主要去向是否明确？（查就业质量报告）
    □ 说不清 → D≤2  □ 有数据 → D=3–4  □ 路径清晰 → D=5
+   **2026目录新增**（《目录（2026年）》/首招）：无就业报告 → D≤2；超常布局 AI 类本科 → D≤3。见 [new-major-guide.md](new-major-guide.md)
 4. 2030 年（本科毕业年）行业趋势？
    □ 🔴 → D≤2  □ 🟡 → D=3  □ 🟢 → D=4–5
 ```
@@ -36,7 +37,7 @@
 ### I 兴趣
 
 ```
-5. [social-reality-guide](social-reality-guide.md)「一天快照」能否接受？
+5. [social-reality-guide](social-reality-guide.md) 及 [social-reality/](social-reality/README.md) 对应分册「一天快照」能否接受？
    □ 不能接受 → I≤2  □ 凑合 → I=3  □ 能接受 → I≥4
 6. 排斥项（夜班/出差/销售/数学痛苦等）是否触发？
    □ 触发 → I=1  □ 无 → 继续
@@ -126,4 +127,5 @@ ADI综合 = A × D × I × R   （各维度 1–5 整数）
 
 - 问卷前： [guided-discovery.md](guided-discovery.md) 缩小方向
 - 问卷后： [career-prospects-6d.md](career-prospects-6d.md) 补结构化数据
+- 2026目录新增： [new-major-guide.md](new-major-guide.md) 加严 D、双路径、志愿层级
 - 权重如何用于排序/评级： [weight-framework.md](weight-framework.md)

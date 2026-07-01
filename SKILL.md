@@ -1,14 +1,15 @@
 ---
-slug: gaokao-volunteer-advisor
-displayName: 高考志愿规划 · 冲稳保评估与推荐
-version: 1.0.0
+slug: gaokao-volunteer-er
+displayName: 高考志愿 · 评估与推荐
+version: 1.3.2
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
   高考志愿填报统一入口：评估已有志愿表、从零生成冲稳保推荐、引导式专业发现、
   社会现实对照与6维职业解读。自动识别用户意图并路由。Use when 高考志愿、志愿填报、
   报志愿、选专业、冲稳保、志愿评估、志愿表审核、不知道填什么、多少分能上、
-  推荐学校、专业干什么、就业怎么样。
+  推荐学校、专业干什么、就业怎么样、新专业、2026目录新增、具身智能、低空经济、目录新增专业、
+  艺术生、体育生、军校、警校、强基、综评、专项计划、中外合作、体检受限、专科、征集志愿。
 tags:
   - gaokao
   - 高考
@@ -31,7 +32,7 @@ tags:
   - agent-skill
 license: MIT
 homepage: https://github.com/kylin-l/gaokao-volunteer-skills
-name: gaokao-volunteer-advisor
+name: gaokao-volunteer-er
 ---
 
 # 高考志愿填报
@@ -51,7 +52,9 @@ name: gaokao-volunteer-advisor
 | ---------------------------- | -------- | ---------------------------------------------------------------- |
 | 提供了志愿表 / 「帮我看看志愿表」/ 「有没有坑」   | **B 评估** | [workflows/evaluation.md](workflows/evaluation.md)               |
 | 「不知道填什么」/ 「帮我推荐」/ 只有分数位次无志愿表 | **A 推荐** | [workflows/recommendation.md](workflows/recommendation.md)       |
-| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [shared/social-reality-guide.md](shared/social-reality-guide.md) |
+| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [social-reality-guide.md](shared/social-reality-guide.md) + [social-reality/](shared/social-reality/README.md) |
+| 艺术/体育统考、军校警校、强基综评、专项、中外合作 | **E 特殊** | [shared/special-admissions.md](shared/special-admissions.md) → 再 A/B |
+| 压线、专科、滑档、征集志愿                     | **F 专科** | [workflows/supplemental-batches.md](workflows/supplemental-batches.md) |
 | 仅查批次线/位次                     | **D 查数** | [shared/data-query.md](shared/data-query.md)                     |
 | 推荐完成后要审核                     | **B 评估** | 对刚生成的方案走 evaluation                                              |
 
@@ -70,10 +73,11 @@ name: gaokao-volunteer-advisor
 
 - 「不知道填什么 / 都行 / 听父母的」
 - 说不清专业学什么、毕业去哪
-- 选专业只因「名字好听 / 听说赚钱」
+- 选专业只因「名字好听 / 听说赚钱 / 短视频种草」
+- 点名 **2026目录新增、风口专业**（具身智能、低空经济、脑机接口等）
 - 家长与学生目标冲突
 
-资源：[shared/guided-discovery.md](shared/guided-discovery.md) · [shared/social-reality-guide.md](shared/social-reality-guide.md) · [examples.md](examples.md)
+资源：[guided-discovery.md](shared/guided-discovery.md) · [social-reality/](shared/social-reality/README.md) · [special-admissions.md](shared/special-admissions.md) · [new-major-guide.md](shared/new-major-guide.md) · [examples.md](examples.md)（15 例）
 
 ---
 
@@ -89,8 +93,8 @@ name: gaokao-volunteer-advisor
 | P3  | 喜好、发展诉求（就业/考研/考公）       |
 
 
-详见 [shared/intake-8d.md](shared/intake-8d.md)。P2 对认知不足考生比「兴趣」更重要。  
-专业方向筛查：[shared/adi-assessment.md](shared/adi-assessment.md) · 权重逻辑：[shared/weight-framework.md](shared/weight-framework.md)
+详见 [shared/intake-8d.md](shared/intake-8d.md)。**特殊身份**（第 8 项）→ 先 [special-admissions.md](shared/special-admissions.md)。  
+专业方向筛查：[adi-assessment.md](shared/adi-assessment.md) · 权重：[weight-framework.md](shared/weight-framework.md) · 分省规则：[province-volunteer-checklist.md](shared/province-volunteer-checklist.md)
 
 ---
 
@@ -130,7 +134,14 @@ name: gaokao-volunteer-advisor
 | [shared/](shared/README.md)                                | 共享 reference（数据/职业/模板） |
 | [shared/weight-framework.md](shared/weight-framework.md)   | 评估/推荐/ADI 权重           |
 | [shared/adi-assessment.md](shared/adi-assessment.md)       | ADI 四维问卷               |
-| [examples.md](examples.md)                                 | 6 个完整对话实例              |
+| [shared/social-reality-guide.md](shared/social-reality-guide.md) | 社会现实总入口 |
+| [shared/social-reality/](shared/social-reality/README.md) | 专业白话分册（14 册） |
+| [shared/special-admissions.md](shared/special-admissions.md) | 特殊招生类型 |
+| [shared/physical-exam-majors.md](shared/physical-exam-majors.md) | 体检受限对照 |
+| [shared/province-volunteer-checklist.md](shared/province-volunteer-checklist.md) | 分省志愿差异 |
+| [workflows/supplemental-batches.md](workflows/supplemental-batches.md) | 专科批与征集 |
+| [shared/new-major-guide.md](shared/new-major-guide.md)   | **2026** 目录新增专业五步筛查 |
+| [examples.md](examples.md)                                 | 15 个完整对话实例 |
 | [reference.md](reference.md)                               | 规则术语                   |
 
 
@@ -141,10 +152,14 @@ name: gaokao-volunteer-advisor
 
 | 类型    | 处理                     |
 | ----- | ---------------------- |
-| 艺术/体育 | 双过线后再推荐/评估，文化位次单独算     |
-| 提前批   | 只推真正愿意去的；说明录取后普通批作废    |
+| 艺术/体育 | [special-admissions.md](shared/special-admissions.md)；双过线；综合分/术科 |
+| 军警/fire | 体检政审；[physical-exam-majors.md](shared/physical-exam-majors.md) |
+| 强基/综评/专项 | 资格与锁档；见 special-admissions |
+| 定向/公费 | 服务期与违约；ADI-R 不合规不推荐 |
 | 中外合作  | 标注学费；家庭 medium 以下默认不推荐 |
-| 定向/公费 | 标注服务期与违约成本             |
+| 压线/专科 | [supplemental-batches.md](workflows/supplemental-batches.md) |
+| 2026目录新增/首招 | [new-major-guide.md](shared/new-major-guide.md)；卡片标 `2026目录新增` |
+| 提前批   | 只推真正愿意去的；说明录取后普通批作废    |
 | 仅查数据  | 只输出 data-check，不给报考建议  |
 
 
@@ -156,4 +171,3 @@ name: gaokao-volunteer-advisor
 - 每个建议带依据（位次 / 排斥项 / 就业报告 / 行业周期）
 - 性别仅在有公开供需或制度数据时使用
 - 方向包和评估报告必须含**同分数段真人路径实例**
-

@@ -55,6 +55,24 @@
       "source_type": "school_db"
     },
     {
+      "id": "moe_undergrad_catalog_2026",
+      "name": "普通高等学校本科专业目录（2026年）",
+      "url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s3882/202604/W020260427440749576927.pdf",
+      "source_type": "policy"
+    },
+    {
+      "id": "moe_catalog_2026_notice",
+      "name": "教育部公布本科专业目录（2026年）通知",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7067247.htm",
+      "source_type": "policy"
+    },
+    {
+      "id": "moe_catalog_2026_release",
+      "name": "教育部本科专业目录（2026年）发布解读",
+      "url": "http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202604/t20260428_1435016.html",
+      "source_type": "policy"
+    },
+    {
       "id": "chsi_major_db",
       "name": "阳光高考专业知识库",
       "url": "https://gaokao.chsi.com.cn/zyk/",

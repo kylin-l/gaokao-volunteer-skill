@@ -3,6 +3,8 @@
 > 详细政策速查见 [shared/national-policy-quickref.md](shared/national-policy-quickref.md)  
 > 位次与计划调整见 [shared/rank-adjustment.md](shared/rank-adjustment.md)  
 > 官方数据源见 [shared/official-sources.md](shared/official-sources.md)  
+> 特殊招生见 [shared/special-admissions.md](shared/special-admissions.md)  
+> 分省差异见 [shared/province-volunteer-checklist.md](shared/province-volunteer-checklist.md)  
 > 权重与 ADI 见 [shared/weight-framework.md](shared/weight-framework.md)、[shared/adi-assessment.md](shared/adi-assessment.md)
 
 ## 志愿模式速查

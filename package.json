@@ -1,6 +1,6 @@
 {
-  "name": "gaokao-volunteer-advisor",
-  "version": "1.0.0",
+  "name": "gaokao-volunteer-er",
+  "version": "1.3.2",
   "description": "高考志愿填报统一 skill：评估志愿表、冲稳保推荐、ADI 四维匹配、社会现实对照",
   "homepage": "https://github.com/kylin-l/gaokao-volunteer-skills",
   "keywords": [
@@ -27,7 +27,8 @@
   "license": "MIT",
   "scripts": {
     "validate": "node scripts/validate-frontmatter.mjs",
-    "publish:dry-run": "skillhub publish . --host https://api.skillhub.cn --dry-run",
-    "publish": "skillhub publish . --host https://api.skillhub.cn"
+    "prepare:publish": "node scripts/prepare-publish.mjs",
+    "publish:dry-run": "npm run validate && npm run prepare:publish && skillhub publish .skillhub-publish --host https://api.skillhub.cn --dry-run",
+    "publish": "npm run validate && npm run prepare:publish && skillhub publish .skillhub-publish --host https://api.skillhub.cn"
   }
 }

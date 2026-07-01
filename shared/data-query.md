@@ -31,6 +31,8 @@
 3. 目标校近年投档最低位次（近 3 年）
 4. 当年招生计划变化
 5. 招生章程 → 选科/体检/学费/校区
+6. 体检表结论 → [physical-exam-majors.md](physical-exam-majors.md)
+7. 分省填报规则 → [province-volunteer-checklist.md](province-volunteer-checklist.md)
 ```
 
 ## 记录格式

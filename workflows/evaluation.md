@@ -12,10 +12,10 @@
 
 ```
 Step 0  intake-8d + data-query 查真实位次/批次线
-Step 1  规则合规（national-policy-quickref + 招生章程）
+Step 1  规则合规（national-policy-quickref + 招生章程）；**体检按需** → 见下节
 Step 2  位次匹配 + 冲稳保（rank-adjustment，含计划调整）
 Step 3  结构梯度 + 退档/滑档风险
-Step 4  社会现实 + ADI 四维（adi-assessment + social-reality-guide + career-prospects-6d）
+Step 4  社会现实 + ADI 四维（adi-assessment + social-reality-guide + career-prospects-6d + **new-major-guide** 若含 2026目录新增）
 Step 5  按 weight-framework 加权评级 + 起草报告（risk-notes 模板）
 Step 6  评级 D/F 或 ADI ❌ 过多 → 切 recommendation，终止本流程
 Step 7  anti-hallucination 自检（通过后方可交付）
@@ -33,8 +33,18 @@ Step 7  anti-hallucination 自检（通过后方可交付）
 | 工作一天 | 引用 social-reality-guide |
 | 2030 趋势 | 🟢/🟡/🔴 |
 | 与排斥项/家庭冲突 | 建议替换 |
+| **2026目录新增**（《目录（2026年）》38 专业 / 首招 / 超常布局） | [new-major-guide.md](../shared/new-major-guide.md)：须标 `2026目录新增` |
 
-禁止只写「就业一般」。
+禁止只写「就业一般」。**2026目录新增**须写清**路径 B 替代**与**无位次风险**，不得因「名字新」给高评级。
+
+## Step 1：体检信息（按需）
+
+非常规必做项。按 [intake-8d.md](../shared/intake-8d.md)「体检信息（按需补充）」：
+
+| 情况 | 动作 |
+|------|------|
+| 志愿含军警/医学/航海/飞行/消防/公安/化学师范等，或用户提及视力色觉身高 | 加载 [physical-exam-majors.md](../shared/physical-exam-majors.md)；缺结论 → 报告标「待核验」 |
+| 普通专业、无体检相关信号 | 不追问；报告脚注提醒填报前核对体检表与章程 |
 
 ## 评级
 
@@ -63,6 +73,14 @@ Step 7  anti-hallucination 自检（通过后方可交付）
 ## 五、ADI 逐项评估（A/D/I/R + 综合判定）
 ## 六、社会现实提示（你以为 vs 实际上 + 实例 + 2030）
 ## 七、结构问题与优化（必须修改 / 建议优化）
+## 七点五、2026 目录新增专节（志愿表含 2026目录新增/首招时必填）
+
+| 专业 | 2026新增 | 招生核验 | 母体学科 | 路径 B | 志愿层级 | 风险 |
+|------|----------|----------|----------|--------|----------|------|
+| | ✅/需核验 | 强/中/弱 | | 冲/稳/保/探索 | 无位次/首招/… |
+
+须对照 [new-major-guide.md](../shared/new-major-guide.md)：无往年位次占稳/保 → **结构问题**；缺路径 B → 建议补充。格式参考 [examples.md](../examples.md) 实例 6–7。
+
 ## 八、下一步清单
 ## 九、待核实 / 免责声明
 ```
@@ -78,9 +96,15 @@ Step 7  anti-hallucination 自检（通过后方可交付）
 
 ## 特殊场景
 
-- 压线生：强化保垫 + 征集志愿；评估权重见 weight-framework「压线生」
-- 艺术/体育：双过线后再评估
-- A/B 方案对比：增对比章节
+| 场景 | 加载 | 对话实例 |
+|------|------|----------|
+| 艺术/体育 | [special-admissions.md](../shared/special-admissions.md) + 对应 social-reality 分册 | [examples.md](../examples.md) **实例 8–9** |
+| 军警/专项/中外合作/定向 | special-admissions + 体检按需 | **实例 12–13** |
+| 压线生 | [supplemental-batches.md](supplemental-batches.md) | **实例 10** |
+| 考公导向 | weight-framework 考公赛道 | **实例 11** |
+| 专业+院校省份（浙鲁等） | [province-volunteer-checklist.md](../shared/province-volunteer-checklist.md) | **实例 14** |
+| 大类招生 | 章程分流规则置顶 | **实例 15** |
+| A/B 方案对比 | 增对比章节 | — |
 
 ## 谨慎交付
 

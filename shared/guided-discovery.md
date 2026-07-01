@@ -106,7 +106,7 @@
 
 1. 考生选定方向包 → 查可行集（位次能报哪些校）
 2. 每个方向包给 **1 冲 + 2 稳 + 1 保** 具体学校实例（带城市名）
-3. 用 [social-reality-guide.md](social-reality-guide.md) 中「一天快照」让学生确认「能接受吗」
+3. 用 [social-reality-guide.md](social-reality-guide.md) 及 [social-reality/](social-reality/README.md) 分册「一天快照」让学生确认「能接受吗」
 4. ADI 四维确认（[adi-assessment.md](adi-assessment.md)）→ 通过后写入志愿表
 
 ---

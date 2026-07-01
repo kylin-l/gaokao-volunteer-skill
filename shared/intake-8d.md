@@ -48,4 +48,17 @@
 |------|------|------|
 | 「不知道填什么」 | guided-discovery 情境题 + 方向包 | adi-assessment → 本表补全 P0 |
 | 已有明确志愿表 | 本表 P0–P2 | ADI 校验 → 直接评估 |
-| 家长/孩子冲突 | guided-discovery + social-reality-guide | adi-assessment → 本表 P5–P7 |
+| 家长/孩子冲突 | guided-discovery + social-reality | adi-assessment → 本表 P5–P7 |
+| 艺术/体育/军警/专项等 | [special-admissions.md](special-admissions.md) | 再填本表；**勿用普通批默认** |
+
+## 体检信息（按需补充，非常规采集）
+
+**不作为**上表第 9 维，默认不主动追问。出现以下信号时，再请用户补充体检结论（或说明「尚未体检」），并加载 [physical-exam-majors.md](physical-exam-majors.md)：
+
+| 信号 | 动作 |
+|------|------|
+| intake 第 8 项含军警/艺术/体育，或志愿含医学/口腔/护理/飞行/航海/消防/公安/师范化学等 | 询问色觉、视力、身高、单科；对照 physical-exam |
+| 用户自述色盲/色弱/近视/身高不足/疤痕等 | 同上；受限专业标 ❌ |
+| 普通工科/经管/文科，且无上述信号 | **不追问**；交付物注明「未采集体检结论，填报前须对照招生章程与体检表」 |
+
+推荐/评估流程均按此「用到再补」原则，见 [evaluation.md](../workflows/evaluation.md) Step 1、[recommendation.md](../workflows/recommendation.md) Step 1。

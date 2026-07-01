@@ -11,12 +11,12 @@
 ## 九步流程
 
 ```
-Step 0  场景识别 → 决策赛道（见 [weight-framework.md](../shared/weight-framework.md)）
-Step 1  intake-8d + guided-discovery
+Step 0  场景识别 → 决策赛道；**特殊身份** → [special-admissions.md](../shared/special-admissions.md)
+Step 1  intake-8d + guided-discovery；**分省规则** → [province-volunteer-checklist.md](../shared/province-volunteer-checklist.md)；**体检按需**（见 intake-8d，非默认追问）
 Step 2  政策检索（national-policy-quickref + WebSearch）
 Step 3  data-query → 可行集 + rank-adjustment 计划调整
 Step 4  2–3 个方向包 + social-reality 确认
-Step 5  用户选定 → ADI 筛查（adi-assessment）+ 专业过滤（career-prospects-6d）
+Step 5  用户选定 → ADI 筛查 + 专业过滤 + **2026目录新增专业五步筛查**（[new-major-guide.md](../shared/new-major-guide.md)）
 Step 6  按赛道权重排序 → 冲稳保分配
 Step 7  推荐卡片 + [candidate-matrix.md](../shared/templates/candidate-matrix.md)
 Step 8  起草交付物 + family-brief + risk-notes
@@ -31,9 +31,9 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 |------|---------------------|
 | 默认 | 35:30:20:15 |
 | 目标明确 | 15:35:20:30 |
-| 压线生 | 20:25:15:**40** |
+| 压线生 | 20:25:15:**40** | 并行 [supplemental-batches.md](supplemental-batches.md)；**实例 10** |
 | 医学 | 20:**45**:25:10 |
-| 考公 | 20:25:**40**:15 |
+| 考公 | 20:25:**40**:15 | 见 [examples.md](../examples.md) **实例 11** |
 | 迷茫型 | 先 guided-discovery + ADI，暂不按权重排序 |
 | 家庭敏感 | 25:25:15:35（另须过滤中外合作/高学费金融） |
 
@@ -51,6 +51,18 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 **主要代价**：……
 **不适合如果**：……
 ```
+
+## 2026 目录新增专业推荐项（Step 5 必查）
+
+涉及 **《本科专业目录（2026年）》新增**、首招、超常布局专业时，加载 [new-major-guide.md](../shared/new-major-guide.md)：
+
+1. **目录 + 省计划 + 章程**三重核验，无位次不得标稳/保
+2. **母体学科**评分（强/中/弱），弱则改推传统对口专业
+3. **ADI 加严**：无就业报告 → D≤2；战略 AI 类本科默认 D≤3
+4. **双路径**：每个 2026 新增方向包须含「路径 A：2026目录新增 + 路径 B：稳妥替代」
+5. 推荐卡片须带 **`2026目录新增`** 标签（见 new-major-guide 第四节）
+
+**默认**：本科优先路径 B；2026 新增专业作冲/探索；详见 [examples.md](../examples.md) 实例 6–7。
 
 ## 冲稳保占比（45 志愿省参考）
 
@@ -87,6 +99,7 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 ## 六、结构说明
 ## 七、填报 checklist
 ## 八、风险摘要
+## 八点五、2026 目录新增专节（含 2026 新增/首招：双路径、母体学科、招生核验、层级限制）
 ## 九、免责声明
 ## 十、建议：提交 evaluation 工作流终审
 ```
@@ -95,10 +108,12 @@ Step 9  anti-hallucination 自检（通过后方可交付）→ 建议走 evalua
 
 | 类型 | 处理 |
 |------|------|
-| 艺术/体育 | 双过线后再推荐，文化位次单独算 |
+| 艺术/体育/军警/专项/中外/定向 | [special-admissions.md](../shared/special-admissions.md)；实例 **8–9、12–13** |
 | 提前批 | 只推真正愿意去的；说明录取后普通批作废 |
-| 中外合作 | 标注学费；家庭 medium 以下默认不推荐 |
-| 定向/公费 | 标注服务期与违约成本 |
+| 2026目录新增/首招 | [new-major-guide.md](../shared/new-major-guide.md)；卡片标 `2026目录新增`；实例 **6–7** |
+| 压线/专科/征集 | [supplemental-batches.md](supplemental-batches.md)；实例 **10** |
+| 浙江/山东等专业+院校省 | [province-volunteer-checklist.md](../shared/province-volunteer-checklist.md)；实例 **14** |
+| 大类招生 | 章程分流规则置顶；实例 **15** |
 | 仅查数据 | 只输出 [data-check.md](../shared/templates/data-check.md)，不给报考建议 |
 
 ## 硬边界
