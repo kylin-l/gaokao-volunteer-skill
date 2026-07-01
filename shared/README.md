@@ -18,6 +18,7 @@
 | `weight-framework.md` | 评估/推荐/ADI 权重 |
 | `rank-adjustment.md` | 位次匹配与计划调整 |
 | `structure-sanity-check.md` | 志愿结构合理性检查（冲稳保/保垫/层级对齐） |
+| `../workflows/modes-cdef.md` | 辅模式 C/D/E/F 三步流程 |
 | `national-policy-quickref.md` | 全国志愿模式速查 |
 | `data-query.md` | 真实数据查询流程 |
 | `official-sources.md` | 官方信息源优先级 |

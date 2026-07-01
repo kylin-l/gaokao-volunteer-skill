@@ -1,7 +1,7 @@
 ---
 slug: gaokao-volunteer-er
 displayName: 高考志愿 · 评估与推荐
-version: 1.3.3
+version: 1.3.4
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
@@ -52,10 +52,10 @@ name: gaokao-volunteer-er
 | ---------------------------- | -------- | ---------------------------------------------------------------- |
 | 提供了志愿表 / 「帮我看看志愿表」/ 「有没有坑」   | **B 评估** | [workflows/evaluation.md](workflows/evaluation.md)               |
 | 「不知道填什么」/ 「帮我推荐」/ 只有分数位次无志愿表 | **A 推荐** | [workflows/recommendation.md](workflows/recommendation.md)       |
-| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [social-reality-guide.md](shared/social-reality-guide.md) + [social-reality/](shared/social-reality/README.md) |
-| 艺术/体育统考、军校警校、强基综评、专项、中外合作 | **E 特殊** | [shared/special-admissions.md](shared/special-admissions.md) → 再 A/B |
-| 压线、专科、滑档、征集志愿                     | **F 专科** | [workflows/supplemental-batches.md](workflows/supplemental-batches.md) |
-| 仅查批次线/位次                     | **D 查数** | [shared/data-query.md](shared/data-query.md)                     |
+| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §C |
+| 艺术/体育统考、军校警校、强基综评、专项、中外合作 | **E 特殊** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §E → 再 A/B |
+| 压线、专科、滑档、征集志愿                     | **F 专科** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §F |
+| 仅查批次线/位次                     | **D 查数** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §D |
 | 推荐完成后要审核                     | **B 评估** | 对刚生成的方案走 evaluation                                              |
 
 
@@ -64,6 +64,38 @@ name: gaokao-volunteer-er
 > 你是已有志愿表想让我检查，还是还没有方案需要我从零推荐？
 
 **全流程闭环**：A 推荐 → 用户确认 → B 评估终审 → 修改后可选再 A。
+
+---
+
+## 每模式最小加载集（防漏读）
+
+本轮对话**只加载**下表「必加载」；「按需」仅在触发信号为真时加载。**不要**一次读完整个 `shared/`。
+
+| 模式 | 必加载 | 按需加载 |
+|------|--------|----------|
+| **A 推荐** | `recommendation.md` · `intake-8d.md` · `anti-hallucination.md` · `structure-sanity-check.md` | `guided-discovery`（迷茫）· `new-major-guide`（2026/首招）· `special-admissions`（第8项）· `supplemental-batches`（压线）· `province-volunteer-checklist`（分省）· `physical-exam-majors`（体检信号） |
+| **B 评估** | `evaluation.md` · `intake-8d.md` · `structure-sanity-check.md` · `anti-hallucination.md` · `adi-assessment.md` | 同上 + `new-major-guide`（表含2026新增） |
+| **C 科普** | `modes-cdef.md` §C · `social-reality-guide.md` · **1 个** social-reality 分册 | `career-prospects-6d`（名称陷阱）· `new-major-guide`（2026） |
+| **D 查数** | `modes-cdef.md` §D · `data-query.md` · `templates/data-check.md` | `official-sources.md` |
+| **E 特殊** | `modes-cdef.md` §E · `special-admissions.md` | `physical-exam-majors` · 对应 social-reality 分册 → 再加载 A 或 B 必加载集 |
+| **F 专科** | `modes-cdef.md` §F · `supplemental-batches.md` | 压线并联时 + A 必加载集 · `structure-sanity-check` |
+
+---
+
+## A / B 步骤对照（顺序等价说明）
+
+推荐先 **ADI 定专业**，再 **结构排冲稳保**；评估先 **结构找退档坑**，再 **ADI 审专业**。语义等价，勿跳过任一侧。
+
+| 阶段 | A 推荐 | B 评估 |
+|------|--------|--------|
+| 采集 | Step 0–1 intake + 分省 | Step 0 intake + 查数 |
+| 规则/数据 | Step 2–3 政策 + data-query + 输入自洽 | Step 1–2 章程 + 位次 + 层级对齐 |
+| 结构 | Step **6** structure-sanity（排完冲稳保后） | Step **3** structure-sanity（先看表结构） |
+| 专业 | Step **5** ADI + 2026 筛查 | Step **4** ADI + 社会现实 |
+| 交付 | Step 7–8 矩阵 + 报告 | Step 5 评级报告 |
+| 门禁 | Step **9** 自检 + **检查记录** | Step 6–7 终止判断 + **检查记录** |
+
+**评估注意**：Step3 结构问题与 Step4 ADI ❌ 叠加时，报告「七、结构问题」与「建议替换」须同时写清；必要时评级 D → 切 A。
 
 ---
 
@@ -129,6 +161,7 @@ name: gaokao-volunteer-er
 
 | 路径                                                         | 内容                     |
 | ---------------------------------------------------------- | ---------------------- |
+| [workflows/modes-cdef.md](workflows/modes-cdef.md) | 辅模式 C/D/E/F 三步流程 |
 | [workflows/recommendation.md](workflows/recommendation.md) | 推荐 9 步流程               |
 | [workflows/evaluation.md](workflows/evaluation.md)         | 评估 8 步流程（Step 0–7）     |
 | [shared/](shared/README.md)                                | 共享 reference（数据/职业/模板） |
@@ -172,3 +205,4 @@ name: gaokao-volunteer-er
 - 每个建议带依据（位次 / 排斥项 / 就业报告 / 行业周期）
 - 性别仅在有公开供需或制度数据时使用
 - 方向包和评估报告必须含**同分数段真人路径实例**
+- 模式 A/B 交付物**必须含「交付前检查记录」**（见 [anti-hallucination.md](shared/anti-hallucination.md)）
