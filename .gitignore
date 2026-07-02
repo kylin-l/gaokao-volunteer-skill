@@ -6,6 +6,6 @@ node_modules/
 .env.*
 .skillhub-publish/
 
-# 案例产出含考生位次/志愿，勿提交公开仓库或 SkillHub 包
-outputs/*
+# 案例产出（考生位次/志愿/FINAL 等）— 仅本地，勿提交 git / SkillHub
+outputs/**
 !outputs/README.md

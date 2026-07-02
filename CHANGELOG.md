@@ -2,6 +2,11 @@
 
 本文件供 SkillHub 发布时读取变更说明（`npm run publish` 自动带上 `--changelog`）。
 
+## 1.4.5
+
+- **发版包**：保留 `outputs/README.md`；案例子目录仍排除（`prepare-publish` 白名单）
+- **gitignore**：`outputs/**` 明确忽略案例目录
+
 ## 1.4.4
 
 - **隐私**：`outputs/` 加入 `.gitignore`；SkillHub 发布包排除案例产出目录

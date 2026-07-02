@@ -7,4 +7,4 @@
 
 规范见 [shared/step-artifacts.md](../shared/step-artifacts.md)。
 
-**勿提交含真实姓名、准考证号的文件到公开仓库**；`outputs/*` 已加入 `.gitignore`，且 **SkillHub 发布包排除 `outputs/`**（见 `scripts/prepare-publish.mjs`）。
+**勿提交含真实姓名、准考证号的文件到公开仓库**。`outputs/{case-id}/` 已加入 `.gitignore` 且不打入 SkillHub 包；**`outputs/README.md` 会随发版保留**（见 `scripts/prepare-publish.mjs`）。

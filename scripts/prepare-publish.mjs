@@ -44,4 +44,12 @@ rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 walkCopy(root, outDir);
 
+// 案例子目录不入包，但保留 outputs/README.md 说明（与 .gitignore 一致）
+const outputsReadme = join(root, 'outputs', 'README.md');
+const publishOutputsReadme = join(outDir, 'outputs', 'README.md');
+if (statSync(outputsReadme, { throwIfNoEntry: false })?.isFile()) {
+  mkdirSync(dirname(publishOutputsReadme), { recursive: true });
+  cpSync(outputsReadme, publishOutputsReadme);
+}
+
 console.log(`OK: 发布目录已生成 → ${outDir}`);

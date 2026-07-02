@@ -25,6 +25,21 @@ outputs/{case-id}/
 
 缺位次时用 `score{分数}` 占位，P0 补齐后重命名目录。
 
+### Git 忽略（案例目录勿提交）
+
+仓库根 `.gitignore` 已配置：
+
+```gitignore
+outputs/**
+!outputs/README.md
+```
+
+- **忽略**：`outputs/{case-id}/` 下全部生成文件（含 `FINAL-志愿方案.md`、`manifest.md` 等）
+- **保留**：`outputs/README.md` 说明文档
+- **SkillHub 发布**：`scripts/prepare-publish.mjs` 排除 `outputs/{case-id}/`，**保留** `outputs/README.md`
+
+Agent 落盘后**不要** `git add outputs/{case-id}/`；用户若在自己项目根使用 `outputs/`，应在该项目 `.gitignore` 中加入相同规则。
+
 ### 写到哪里
 
 | 优先级 | 路径 | 说明 |
