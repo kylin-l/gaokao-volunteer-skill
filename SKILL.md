@@ -1,7 +1,7 @@
 ---
 slug: gaokao-volunteer-er
 displayName: 高考志愿 · 评估与推荐
-version: 1.4.0
+version: 1.4.3
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
@@ -103,7 +103,7 @@ name: gaokao-volunteer-er
 | 规则/数据 | Step 2–3 政策 + data-query + 输入自洽 | Step 1–2 章程 + 位次 + 层级对齐 |
 | 结构 | Step **7** structure-sanity（排完冲稳保后） | Step **3** structure-sanity（先看表结构） |
 | 专业 | Step **4–6** 全景 → 逐题收窄 → 标记 → ADI + 2026 筛查 | Step **4** ADI + 社会现实 |
-| 交付 | Step 8–9 矩阵 + 报告 | Step 5 评级报告 |
+| 交付 | Step 8–9 矩阵 + FINAL + **对话总结果/路径** | Step 5 评级报告 + **对话总结果/路径** |
 | 门禁 | Step **10** 自检 + **检查记录** | Step 6–7 终止判断 + **检查记录** |
 
 **评估注意**：Step3 结构问题与 Step4 ADI ❌ 叠加时，报告「七、结构问题」与「建议替换」须同时写清；必要时评级 D → 切 A。
@@ -190,7 +190,8 @@ name: gaokao-volunteer-er
 | [shared/step-artifacts.md](shared/step-artifacts.md) | **分步产出物**与 `outputs/{case-id}/` 规范 |
 | [shared/agent-handoff.md](shared/agent-handoff.md) | Agent 交接（读文件，不读长对话） |
 | [outputs/README.md](outputs/README.md) | 案例产出目录说明 |
-| [examples.md](examples.md)                                 | 15 个完整对话实例 |
+| [shared/templates/volunteer-full-table.md](shared/templates/volunteer-full-table.md) | **45 志愿全字段表**模板 |
+| [shared/templates/major-outlook.md](shared/templates/major-outlook.md) | 发展·就业·AI 前景专题模板 |
 | [reference.md](reference.md)                               | 规则术语                   |
 
 
@@ -221,3 +222,4 @@ name: gaokao-volunteer-er
 - 性别仅在有公开供需或制度数据时使用
 - 方向全景 / 方向条目 / 评估报告必须含**同分数段真人路径实例**（全景中每条 ✅/⚠️ 至少一行实例或「待查就业报告」）
 - 模式 A/B 交付物**必须含「交付前检查记录」**（见 [anti-hallucination.md](shared/anti-hallucination.md)）
+- 模式 A、**院校专业组省**：Step 9 产出 **`FINAL-志愿方案.md`**；Step 10 **对话内必输出总结果摘要 + 文件完整路径**（见 [recommendation.md](workflows/recommendation.md)）

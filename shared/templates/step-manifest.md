@@ -20,8 +20,11 @@
 | 6 | ADI 深评 | `06-adi.md` | | |
 | 7 | 结构门禁 | `07-structure.md` | | |
 | 8 | 候选矩阵 | `08-candidates.md` | | |
-| 9 | 报告草稿 | `09-report-draft.md` | | |
+| 9 | 过程稿 | `09-report-draft.md` | | |
+| **交付** | **最终方案** | `FINAL-志愿方案.md` | | 给用户 |
+| 9+ | 前景展开 | `11-major-outlook.md` | | 可选 |
 | 10 | 交付自检 | `10-preflight-check.md` | | |
+| 10+ | 对话总结果 | （对话内）总结果 + FINAL 路径 | | 必输出 |
 | — | → 评估交接 | `handoff-to-evaluation.md` | | 用户要审核时 |
 
 ### 评估附加（模式 B）

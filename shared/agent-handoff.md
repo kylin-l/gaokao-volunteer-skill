@@ -179,4 +179,13 @@
 （正文）
 ```
 
-Step 10 额外输出：① 完整 `handoff-to-evaluation.md` 正文（供保存）② **交接提示词**块（供复制到新会话，见 agent-handoff.md）。
+### Step 10 完成时（写盘成功亦必做）
+
+推荐 **Step 10** / 评估 **Step 7** 通过后，对话内**必须**再输出：
+
+1. **总结果摘要** — 三句话 + 冲稳保一览（不重复贴全表）  
+2. **文件路径表** — 至少含 `FINAL-志愿方案.md`（推荐）或 `evaluation-report.md`（评估）的**完整路径**
+
+模板见 [recommendation.md](../workflows/recommendation.md) §「Step 10 · 对话内总结果输出」。
+
+Step 10 额外（用户要审核时）：① 完整 `handoff-to-evaluation.md` 正文 ② **交接提示词**块。

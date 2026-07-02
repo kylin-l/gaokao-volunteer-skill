@@ -51,5 +51,7 @@
 - [templates/candidate-matrix.md](templates/candidate-matrix.md)
 - [templates/data-check.md](templates/data-check.md)
 - [templates/family-brief.md](templates/family-brief.md)
+- [templates/volunteer-full-table.md](templates/volunteer-full-table.md) — **45 志愿全字段表**（校专综评 · 推荐依据 · 前景）
+- [templates/major-outlook.md](templates/major-outlook.md) — 发展·就业·AI 专题
 - [templates/step-manifest.md](templates/step-manifest.md)
 - [templates/risk-notes.md](templates/risk-notes.md)

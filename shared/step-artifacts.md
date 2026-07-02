@@ -50,8 +50,11 @@ outputs/{case-id}/
 | **6** | `06-adi.md` | **全部**标记方向的 ADI 深评；2026 新增筛查 | ADI ❌ 主力未处理 |
 | **7** | `07-structure.md` | 冲稳保分配、结构门禁核对、偏差率表 | 结构阻断项 |
 | **8** | `08-candidates.md` | 推荐卡片 + [candidate-matrix](templates/candidate-matrix.md) | — |
-| **9** | `09-report-draft.md` | 完整推荐报告草稿（交付物一～八） | — |
+| **9** | `09-report-draft.md` | 过程稿：画像、推荐卡、检查记录（**勿重复贴全表**） | — |
+| **交付** | `FINAL-志愿方案.md` | **用户最终方案**：[final-deliverable](templates/final-deliverable.md)；含 45 志愿全表 + 填报步骤 | 45 志愿省必出 |
+| **9+** | `11-major-outlook.md` | 前景展开（可选）；主表「前景」列已够用则可简写 | — |
 | **10** | `10-preflight-check.md` | [交付前检查记录](anti-hallucination.md) + 结论 | ❌ 阻断交付 |
+| **10+** | **对话内总结果** | 总结果摘要 + **FINAL 文件完整路径**（见 [recommendation.md](../workflows/recommendation.md) Step 10） | 未输出则交付不完整 |
 | **交接** | `handoff-to-evaluation.md` | 见 [agent-handoff.md](agent-handoff.md)；**索引各步文件路径** | 用户要评估时 |
 
 ### 增量写入（Step 1、5）
@@ -98,10 +101,14 @@ outputs/{case-id}/
 | 产物 | 用途 |
 |------|------|
 | `04`～`08` 等分步文件 | 细粒度交接、断点续做 |
-| `09-report-draft.md` | 给用户看的完整推荐方案 |
+| `09-report-draft.md` | Agent 过程稿：推荐卡、评级补充、检查记录 |
+| `FINAL-志愿方案.md` | **给用户的一页式最终交付**：全表 + 三句话 + 填报步骤 |
+| `11-major-outlook.md` | 前景专题（可选深读） |
 | `handoff-to-evaluation.md` | 给评估 Agent 的**入口**（摘要 + manifest 指针） |
 
-完整报告**可**由分步文件汇编生成；分步文件是**源**，报告是**视图**。
+完整报告**可**由分步文件汇编生成；分步文件是**源**，**FINAL** 是**用户视图**。  
+**禁止**：`09` 与 `FINAL` 各贴一张不同的全表；全表**只出现在 FINAL**。  
+**禁止**：落盘 FINAL 后对话内不输出总结果摘要与文件路径。
 
 ---
 

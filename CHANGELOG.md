@@ -2,6 +2,23 @@
 
 本文件供 SkillHub 发布时读取变更说明（`npm run publish` 自动带上 `--changelog`）。
 
+## 1.4.3
+
+- **对话交付**：Step 10（推荐）/ Step 7（评估）须在对话内输出**总结果摘要** + **FINAL/报告完整路径**
+- `anti-hallucination` 检查表新增第 10 项；`agent-handoff` / `step-artifacts` 同步
+
+## 1.4.2
+
+- **单文件用户交付**：`FINAL-志愿方案.md` 合并全表 + 填报步骤；`09` 降为过程稿
+- 新增 `shared/templates/final-deliverable.md`
+
+## 1.4.1
+
+- **45 志愿全表模板**：新增 `shared/templates/volunteer-full-table.md`（校专综评四段 · 推荐依据 · 前景）
+- **前景专题模板**：新增 `shared/templates/major-outlook.md`（发展·就业·AI + 45 条速查）
+- **Step 9 交付**：`step-artifacts.md` / `recommendation.md` 明确 `10-volunteer-full-table` + `11-major-outlook` 落盘要求
+- **manifest**：`step-manifest.md` 增加 9+ 全表与前景两行
+
 ## 1.4.0
 
 - **方向全景**：引导发现改为先扫全、再逐题收窄，不设方向个数上限
