@@ -1,6 +1,6 @@
 # 高考志愿 Skill 包（gaokao-volunteer-er）
 
-统一 Cursor Agent Skill：自动路由**志愿评估**与**冲稳保推荐**，含 ADI 四维专业匹配、权重框架、反幻觉与谨慎交付规范。
+统一 Agent Skill：自动路由**志愿评估**与**冲稳保推荐**，含 ADI 四维专业匹配、权重框架、反幻觉与谨慎交付规范。
 
 
 | 字段              | 值                                                                                                        |
@@ -40,17 +40,28 @@
 
 ## 安装
 
-### SkillHub 安装
+### SkillHub 安装 / 更新
+
+`--dir` 为**本机 skill 安装根目录**（因 Agent 而异）。已安装过可用 `skillhub list --dir <目录>` 确认路径；未指定时 CLI 默认为当前目录下的 `./skills`。
 
 ```bash
-# 安装 CLI（见下方「发布」一节）
-skillhub install gaokao-volunteer-er --scope user
+# 首次安装（将 <skills-dir> 换为你的安装根目录）
+skillhub install gaokao-volunteer-er --dir <skills-dir>
+
+# 更新（二选一）
+skillhub upgrade gaokao-volunteer-er --dir <skills-dir>
+skillhub install gaokao-volunteer-er --force --dir <skills-dir>
+
+# 仅查看是否有新版本
+skillhub upgrade gaokao-volunteer-er --check-only --dir <skills-dir>
 ```
 
-### GitHub 手动安装（Cursor）
+> **使用前**：Agent 一句话提醒版本；给出更新命令或用户确认后代执行（见 `SKILL.md` §「使用前：更新 skill」）。
+
+### GitHub 手动安装
 
 ```bash
-git clone https://github.com/kylin-l/gaokao-volunteer-skills.git ~/.cursor/skills/gaokao-volunteer-er
+git clone https://github.com/kylin-l/gaokao-volunteer-skills.git <skills-dir>/gaokao-volunteer-er
 ```
 
 安装目录名须与 `slug` 一致：`gaokao-volunteer-er`。

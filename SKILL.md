@@ -56,18 +56,32 @@ name: gaokao-volunteer-er
 
 ---
 
+## 使用前：更新 skill（先于 Step 0，可跳过）
+
+读 frontmatter `version`（当前 **1.4.5**），**一句话**提醒用户；说「继续」则直接进入 Step 0。
+
+- **默认**：给出 `skillhub upgrade gaokao-volunteer-er --dir <skills-dir>`（重装用 `install --force`）；路径不明先问用户或 `skillhub list`
+- **用户说「帮我更新」**：确认后在 Shell 代执行；成功后建议新开对话
+- **Git 开发仓**：`git pull`（确认后可代执行）
+
+> 当前版本 **{version}**。要更新请执行上述命令，或回复「帮我更新」/「继续」。
+
+**禁止**：未确认擅自升级；硬编码安装路径；`--scope user`（已废弃）。
+
+---
+
 ## Step 0：意图路由（每次对话先做）
 
 
-| 信号                           | 模式       | 加载工作流                                                            |
-| ---------------------------- | -------- | ---------------------------------------------------------------- |
-| 提供了志愿表 / 「帮我看看志愿表」/ 「有没有坑」   | **B 评估** | [workflows/evaluation.md](workflows/evaluation.md)               |
-| 「不知道填什么」/ 「帮我推荐」/ 只有分数位次无志愿表 | **A 推荐** | [workflows/recommendation.md](workflows/recommendation.md)       |
-| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §C |
-| 艺术/体育统考、军校警校、强基综评、专项、中外合作 | **E 特殊** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §E → 再 A/B |
-| 压线、专科、滑档、征集志愿                     | **F 专科** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §F |
-| 仅查批次线/位次                     | **D 查数** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §D |
-| 推荐完成后要审核 / **交接** / 看看有没有坑   | **B 评估** | 生成交接包 + **交接提示词** → 新会话 evaluation |
+| 信号                           | 模式       | 加载工作流                                                         |
+| ---------------------------- | -------- | ------------------------------------------------------------- |
+| 提供了志愿表 / 「帮我看看志愿表」/ 「有没有坑」   | **B 评估** | [workflows/evaluation.md](workflows/evaluation.md)            |
+| 「不知道填什么」/ 「帮我推荐」/ 只有分数位次无志愿表 | **A 推荐** | [workflows/recommendation.md](workflows/recommendation.md)    |
+| 「专业干什么」/ 「就业怎么样」/ 概念问答       | **C 科普** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §C         |
+| 艺术/体育统考、军校警校、强基综评、专项、中外合作    | **E 特殊** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §E → 再 A/B |
+| 压线、专科、滑档、征集志愿                | **F 专科** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §F         |
+| 仅查批次线/位次                     | **D 查数** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §D         |
+| 推荐完成后要审核 / **交接** / 看看有没有坑   | **B 评估** | 生成交接包 + **交接提示词** → 新会话 evaluation                            |
 
 
 **不确定时**问一句：
@@ -82,14 +96,16 @@ name: gaokao-volunteer-er
 
 本轮对话**只加载**下表「必加载」；「按需」仅在触发信号为真时加载。**不要**一次读完整个 `shared/`。
 
-| 模式 | 必加载 | 按需加载 |
-|------|--------|----------|
-| **A 推荐** | `recommendation.md` · `step-artifacts.md` · `intake-8d.md` · `anti-hallucination.md` · `structure-sanity-check.md` | `guided-discovery`（迷茫）· `agent-handoff`（Step10 后）· … |
-| **B 评估** | `evaluation.md` · `step-artifacts.md` · `agent-handoff.md` · `intake-8d.md` · `structure-sanity-check.md` · `anti-hallucination.md` · `adi-assessment.md` | 读 `outputs/{case-id}/handoff-to-evaluation.md` · … |
-| **C 科普** | `modes-cdef.md` §C · `social-reality-guide.md` · **1 个** social-reality 分册 | `career-prospects-6d`（名称陷阱）· `new-major-guide`（2026） |
-| **D 查数** | `modes-cdef.md` §D · `data-query.md` · `templates/data-check.md` | `official-sources.md` |
-| **E 特殊** | `modes-cdef.md` §E · `special-admissions.md` | `physical-exam-majors` · 对应 social-reality 分册 → 再加载 A 或 B 必加载集 |
-| **F 专科** | `modes-cdef.md` §F · `supplemental-batches.md` | 压线并联时 + A 必加载集 · `structure-sanity-check` |
+
+| 模式       | 必加载                                                                                                                                                       | 按需加载                                                           |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **A 推荐** | `recommendation.md` · `step-artifacts.md` · `intake-8d.md` · `anti-hallucination.md` · `structure-sanity-check.md`                                        | `guided-discovery`（迷茫）· `agent-handoff`（Step10 后）· …           |
+| **B 评估** | `evaluation.md` · `step-artifacts.md` · `agent-handoff.md` · `intake-8d.md` · `structure-sanity-check.md` · `anti-hallucination.md` · `adi-assessment.md` | 读 `outputs/{case-id}/handoff-to-evaluation.md` · …             |
+| **C 科普** | `modes-cdef.md` §C · `social-reality-guide.md` · **1 个** social-reality 分册                                                                                | `career-prospects-6d`（名称陷阱）· `new-major-guide`（2026）           |
+| **D 查数** | `modes-cdef.md` §D · `data-query.md` · `templates/data-check.md`                                                                                          | `official-sources.md`                                          |
+| **E 特殊** | `modes-cdef.md` §E · `special-admissions.md`                                                                                                              | `physical-exam-majors` · 对应 social-reality 分册 → 再加载 A 或 B 必加载集 |
+| **F 专科** | `modes-cdef.md` §F · `supplemental-batches.md`                                                                                                            | 压线并联时 + A 必加载集 · `structure-sanity-check`                      |
+
 
 ---
 
@@ -97,14 +113,16 @@ name: gaokao-volunteer-er
 
 推荐先 **ADI 定专业**，再 **结构排冲稳保**；评估先 **结构找退档坑**，再 **ADI 审专业**。语义等价，勿跳过任一侧。
 
-| 阶段 | A 推荐 | B 评估 |
-|------|--------|--------|
-| 采集 | Step 0–1 intake + 分省 | Step 0 intake + 查数 |
-| 规则/数据 | Step 2–3 政策 + data-query + 输入自洽 | Step 1–2 章程 + 位次 + 层级对齐 |
-| 结构 | Step **7** structure-sanity（排完冲稳保后） | Step **3** structure-sanity（先看表结构） |
-| 专业 | Step **4–6** 全景 → 逐题收窄 → 标记 → ADI + 2026 筛查 | Step **4** ADI + 社会现实 |
-| 交付 | Step 8–9 矩阵 + FINAL + **对话总结果/路径** | Step 5 评级报告 + **对话总结果/路径** |
-| 门禁 | Step **10** 自检 + **检查记录** | Step 6–7 终止判断 + **检查记录** |
+
+| 阶段    | A 推荐                                        | B 评估                               |
+| ----- | ------------------------------------------- | ---------------------------------- |
+| 采集    | Step 0–1 intake + 分省                        | Step 0 intake + 查数                 |
+| 规则/数据 | Step 2–3 政策 + data-query + 输入自洽             | Step 1–2 章程 + 位次 + 层级对齐            |
+| 结构    | Step **7** structure-sanity（排完冲稳保后）         | Step **3** structure-sanity（先看表结构） |
+| 专业    | Step **4–6** 全景 → 逐题收窄 → 标记 → ADI + 2026 筛查 | Step **4** ADI + 社会现实              |
+| 交付    | Step 8–9 矩阵 + FINAL + **对话总结果/路径**          | Step 5 评级报告 + **对话总结果/路径**         |
+| 门禁    | Step **10** 自检 + **检查记录**                   | Step 6–7 终止判断 + **检查记录**           |
+
 
 **评估注意**：Step3 结构问题与 Step4 ADI ❌ 叠加时，报告「七、结构问题」与「建议替换」须同时写清；必要时评级 D → 切 A。
 
@@ -170,29 +188,29 @@ name: gaokao-volunteer-er
 ## 资源索引
 
 
-| 路径                                                         | 内容                     |
-| ---------------------------------------------------------- | ---------------------- |
-| [workflows/modes-cdef.md](workflows/modes-cdef.md) | 辅模式 C/D/E/F 三步流程 |
-| [workflows/recommendation.md](workflows/recommendation.md) | 推荐 10 步流程               |
-| [workflows/evaluation.md](workflows/evaluation.md)         | 评估 8 步流程（Step 0–7）     |
-| [shared/](shared/README.md)                                | 共享 reference（数据/职业/模板） |
-| [shared/weight-framework.md](shared/weight-framework.md)   | 评估/推荐/ADI 权重           |
-| [shared/adi-assessment.md](shared/adi-assessment.md)       | ADI 四维问卷               |
-| [shared/social-reality-guide.md](shared/social-reality-guide.md) | 社会现实总入口 |
-| [shared/social-reality/](shared/social-reality/README.md) | 专业白话分册（14 册） |
-| [shared/special-admissions.md](shared/special-admissions.md) | 特殊招生类型 |
-| [shared/physical-exam-majors.md](shared/physical-exam-majors.md) | 体检受限对照 |
-| [shared/province-volunteer-checklist.md](shared/province-volunteer-checklist.md) | 分省志愿差异 |
-| [workflows/supplemental-batches.md](workflows/supplemental-batches.md) | 专科批与征集 |
-| [shared/new-major-guide.md](shared/new-major-guide.md)   | **2026** 目录新增专业五步筛查 |
-| [shared/structure-sanity-check.md](shared/structure-sanity-check.md) | 志愿结构合理性检查 |
-| [shared/anti-hallucination.md](shared/anti-hallucination.md) | 反幻觉与交付自检 |
-| [shared/step-artifacts.md](shared/step-artifacts.md) | **分步产出物**与 `outputs/{case-id}/` 规范 |
-| [shared/agent-handoff.md](shared/agent-handoff.md) | Agent 交接（读文件，不读长对话） |
-| [outputs/README.md](outputs/README.md) | 案例产出目录说明 |
-| [shared/templates/volunteer-full-table.md](shared/templates/volunteer-full-table.md) | **45 志愿全字段表**模板 |
-| [shared/templates/major-outlook.md](shared/templates/major-outlook.md) | 发展·就业·AI 前景专题模板 |
-| [reference.md](reference.md)                               | 规则术语                   |
+| 路径                                                                                   | 内容                                 |
+| ------------------------------------------------------------------------------------ | ---------------------------------- |
+| [workflows/modes-cdef.md](workflows/modes-cdef.md)                                   | 辅模式 C/D/E/F 三步流程                   |
+| [workflows/recommendation.md](workflows/recommendation.md)                           | 推荐 10 步流程                          |
+| [workflows/evaluation.md](workflows/evaluation.md)                                   | 评估 8 步流程（Step 0–7）                 |
+| [shared/](shared/README.md)                                                          | 共享 reference（数据/职业/模板）             |
+| [shared/weight-framework.md](shared/weight-framework.md)                             | 评估/推荐/ADI 权重                       |
+| [shared/adi-assessment.md](shared/adi-assessment.md)                                 | ADI 四维问卷                           |
+| [shared/social-reality-guide.md](shared/social-reality-guide.md)                     | 社会现实总入口                            |
+| [shared/social-reality/](shared/social-reality/README.md)                            | 专业白话分册（14 册）                       |
+| [shared/special-admissions.md](shared/special-admissions.md)                         | 特殊招生类型                             |
+| [shared/physical-exam-majors.md](shared/physical-exam-majors.md)                     | 体检受限对照                             |
+| [shared/province-volunteer-checklist.md](shared/province-volunteer-checklist.md)     | 分省志愿差异                             |
+| [workflows/supplemental-batches.md](workflows/supplemental-batches.md)               | 专科批与征集                             |
+| [shared/new-major-guide.md](shared/new-major-guide.md)                               | **2026** 目录新增专业五步筛查                |
+| [shared/structure-sanity-check.md](shared/structure-sanity-check.md)                 | 志愿结构合理性检查                          |
+| [shared/anti-hallucination.md](shared/anti-hallucination.md)                         | 反幻觉与交付自检                           |
+| [shared/step-artifacts.md](shared/step-artifacts.md)                                 | **分步产出物**与 `outputs/{case-id}/` 规范 |
+| [shared/agent-handoff.md](shared/agent-handoff.md)                                   | Agent 交接（读文件，不读长对话）                |
+| [outputs/README.md](outputs/README.md)                                               | 案例产出目录说明                           |
+| [shared/templates/volunteer-full-table.md](shared/templates/volunteer-full-table.md) | **45 志愿全字段表**模板                    |
+| [shared/templates/major-outlook.md](shared/templates/major-outlook.md)               | 发展·就业·AI 前景专题模板                    |
+| [reference.md](reference.md)                                                         | 规则术语                               |
 
 
 ---
@@ -200,17 +218,17 @@ name: gaokao-volunteer-er
 ## 特殊类型
 
 
-| 类型    | 处理                     |
-| ----- | ---------------------- |
-| 艺术/体育 | [special-admissions.md](shared/special-admissions.md)；双过线；综合分/术科 |
-| 军警/fire | 体检政审；[physical-exam-majors.md](shared/physical-exam-majors.md) |
-| 强基/综评/专项 | 资格与锁档；见 special-admissions |
-| 定向/公费 | 服务期与违约；ADI-R 不合规不推荐 |
-| 中外合作  | 标注学费；家庭 medium 以下默认不推荐 |
-| 压线/专科 | [supplemental-batches.md](workflows/supplemental-batches.md) |
-| 2026目录新增/首招 | [new-major-guide.md](shared/new-major-guide.md)；卡片标 `2026目录新增` |
-| 提前批   | 只推真正愿意去的；说明录取后普通批作废    |
-| 仅查数据  | 只输出 data-check，不给报考建议  |
+| 类型          | 处理                                                               |
+| ----------- | ---------------------------------------------------------------- |
+| 艺术/体育       | [special-admissions.md](shared/special-admissions.md)；双过线；综合分/术科 |
+| 军警/fire     | 体检政审；[physical-exam-majors.md](shared/physical-exam-majors.md)   |
+| 强基/综评/专项    | 资格与锁档；见 special-admissions                                       |
+| 定向/公费       | 服务期与违约；ADI-R 不合规不推荐                                              |
+| 中外合作        | 标注学费；家庭 medium 以下默认不推荐                                           |
+| 压线/专科       | [supplemental-batches.md](workflows/supplemental-batches.md)     |
+| 2026目录新增/首招 | [new-major-guide.md](shared/new-major-guide.md)；卡片标 `2026目录新增`   |
+| 提前批         | 只推真正愿意去的；说明录取后普通批作废                                              |
+| 仅查数据        | 只输出 data-check，不给报考建议                                            |
 
 
 ---
@@ -222,4 +240,5 @@ name: gaokao-volunteer-er
 - 性别仅在有公开供需或制度数据时使用
 - 方向全景 / 方向条目 / 评估报告必须含**同分数段真人路径实例**（全景中每条 ✅/⚠️ 至少一行实例或「待查就业报告」）
 - 模式 A/B 交付物**必须含「交付前检查记录」**（见 [anti-hallucination.md](shared/anti-hallucination.md)）
-- 模式 A、**院校专业组省**：Step 9 产出 **`FINAL-志愿方案.md`**；Step 10 **对话内必输出**总结果摘要 + 文件完整路径 + **下一步引导**（提示用户回复「交接」做评估）；见 [recommendation.md](workflows/recommendation.md)
+- 模式 A、**院校专业组省**：Step 9 产出 `**FINAL-志愿方案.md`**；Step 10 **对话内必输出**总结果摘要 + 文件完整路径 + **下一步引导**（提示用户回复「交接」做评估）；见 [recommendation.md](workflows/recommendation.md)
+
