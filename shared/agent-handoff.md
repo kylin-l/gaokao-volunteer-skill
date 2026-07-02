@@ -184,7 +184,8 @@
 推荐 **Step 10** / 评估 **Step 7** 通过后，对话内**必须**再输出：
 
 1. **总结果摘要** — 三句话 + 冲稳保一览（不重复贴全表）  
-2. **文件路径表** — 至少含 `FINAL-志愿方案.md`（推荐）或 `evaluation-report.md`（评估）的**完整路径**
+2. **文件路径表** — 至少含 `FINAL-志愿方案.md`（推荐）或 `evaluation-report.md`（评估）的**完整路径**  
+3. **下一步引导** — 提示用户回复「交接」做模式 B 评估（见 recommendation Step 10 §3）；用户已说「交接」时再输出完整交接提示词
 
 模板见 [recommendation.md](../workflows/recommendation.md) §「Step 10 · 对话内总结果输出」。
 

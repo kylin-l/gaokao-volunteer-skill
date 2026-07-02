@@ -222,4 +222,4 @@ name: gaokao-volunteer-er
 - 性别仅在有公开供需或制度数据时使用
 - 方向全景 / 方向条目 / 评估报告必须含**同分数段真人路径实例**（全景中每条 ✅/⚠️ 至少一行实例或「待查就业报告」）
 - 模式 A/B 交付物**必须含「交付前检查记录」**（见 [anti-hallucination.md](shared/anti-hallucination.md)）
-- 模式 A、**院校专业组省**：Step 9 产出 **`FINAL-志愿方案.md`**；Step 10 **对话内必输出总结果摘要 + 文件完整路径**（见 [recommendation.md](workflows/recommendation.md)）
+- 模式 A、**院校专业组省**：Step 9 产出 **`FINAL-志愿方案.md`**；Step 10 **对话内必输出**总结果摘要 + 文件完整路径 + **下一步引导**（提示用户回复「交接」做评估）；见 [recommendation.md](workflows/recommendation.md)
