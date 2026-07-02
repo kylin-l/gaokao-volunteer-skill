@@ -24,6 +24,8 @@
 | `official-sources.md` | 官方信息源优先级 |
 | `new-major-guide.md` | **2026** 目录新增专业：五步筛查、八大赛道、双路径 |
 | `anti-hallucination.md` | 反幻觉与表达规范 |
+| `step-artifacts.md` | **分步产出物**（每步落盘 + manifest） |
+| `agent-handoff.md` | 推荐 ↔ 评估交接 |
 | `data/official-source-index.json` | 省考试院 URL 索引 |
 | `templates/*` | 报告与交付模板 |
 | `../workflows/supplemental-batches.md` | 专科批与征集志愿 |
@@ -49,4 +51,5 @@
 - [templates/candidate-matrix.md](templates/candidate-matrix.md)
 - [templates/data-check.md](templates/data-check.md)
 - [templates/family-brief.md](templates/family-brief.md)
+- [templates/step-manifest.md](templates/step-manifest.md)
 - [templates/risk-notes.md](templates/risk-notes.md)

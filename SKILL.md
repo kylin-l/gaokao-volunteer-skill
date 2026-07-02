@@ -1,7 +1,7 @@
 ---
 slug: gaokao-volunteer-er
 displayName: 高考志愿 · 评估与推荐
-version: 1.3.5
+version: 1.3.8
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
@@ -43,6 +43,17 @@ name: gaokao-volunteer-er
 
 **谨慎原则**：信息不全则暂停；数据标注来源与年份；ADI ❌ 默认不推荐；用户坚持须书面确认；不替用户提交志愿系统。
 
+**方向呈现原则（迷茫型 / 模式 A Step 4–5）**：
+
+1. **先扫全**：按 [social-reality/](shared/social-reality/README.md) 分册输出**方向全景**（✅/⚠️/❌），**不设方向个数上限**。
+2. **再逐题收窄**：全景之后仍用**一次一题**（生活快照、排斥确认、域对比、家庭分歧）缩小范围，**不得**用固定个数（如 2/3/5 个）截断选项。
+3. **再标记 + ADI**：考生明确标记感兴趣/排除后，对**全部**标记项做 ADI 深评（仍不限个数）。
+4. **最后志愿**：冲稳保矩阵可混合多个专业类；「1 主 + 备」仅描述**志愿表权重**，不是方向选择个数上限。
+
+不得套用「物理类默认三件套」等模板。详见 [guided-discovery.md](shared/guided-discovery.md)。
+
+**分步产出（交接）**：推荐/评估**每一步**写入 `outputs/{case-id}/` 对应文件，并更新 `manifest.md`。规范见 [step-artifacts.md](shared/step-artifacts.md)；Agent 交接见 [agent-handoff.md](shared/agent-handoff.md)。
+
 ---
 
 ## Step 0：意图路由（每次对话先做）
@@ -56,7 +67,7 @@ name: gaokao-volunteer-er
 | 艺术/体育统考、军校警校、强基综评、专项、中外合作 | **E 特殊** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §E → 再 A/B |
 | 压线、专科、滑档、征集志愿                     | **F 专科** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §F |
 | 仅查批次线/位次                     | **D 查数** | [workflows/modes-cdef.md](workflows/modes-cdef.md) §D |
-| 推荐完成后要审核                     | **B 评估** | 对刚生成的方案走 evaluation                                              |
+| 推荐完成后要审核 / **交接** / 看看有没有坑   | **B 评估** | 生成交接包 + **交接提示词** → 新会话 evaluation |
 
 
 **不确定时**问一句：
@@ -73,8 +84,8 @@ name: gaokao-volunteer-er
 
 | 模式 | 必加载 | 按需加载 |
 |------|--------|----------|
-| **A 推荐** | `recommendation.md` · `intake-8d.md` · `anti-hallucination.md` · `structure-sanity-check.md` | `guided-discovery`（迷茫）· `new-major-guide`（2026/首招）· `special-admissions`（第8项）· `supplemental-batches`（压线）· `province-volunteer-checklist`（分省）· `physical-exam-majors`（体检信号） |
-| **B 评估** | `evaluation.md` · `intake-8d.md` · `structure-sanity-check.md` · `anti-hallucination.md` · `adi-assessment.md` | 同上 + `new-major-guide`（表含2026新增） |
+| **A 推荐** | `recommendation.md` · `step-artifacts.md` · `intake-8d.md` · `anti-hallucination.md` · `structure-sanity-check.md` | `guided-discovery`（迷茫）· `agent-handoff`（Step10 后）· … |
+| **B 评估** | `evaluation.md` · `step-artifacts.md` · `agent-handoff.md` · `intake-8d.md` · `structure-sanity-check.md` · `anti-hallucination.md` · `adi-assessment.md` | 读 `outputs/{case-id}/handoff-to-evaluation.md` · … |
 | **C 科普** | `modes-cdef.md` §C · `social-reality-guide.md` · **1 个** social-reality 分册 | `career-prospects-6d`（名称陷阱）· `new-major-guide`（2026） |
 | **D 查数** | `modes-cdef.md` §D · `data-query.md` · `templates/data-check.md` | `official-sources.md` |
 | **E 特殊** | `modes-cdef.md` §E · `special-admissions.md` | `physical-exam-majors` · 对应 social-reality 分册 → 再加载 A 或 B 必加载集 |
@@ -90,10 +101,10 @@ name: gaokao-volunteer-er
 |------|--------|--------|
 | 采集 | Step 0–1 intake + 分省 | Step 0 intake + 查数 |
 | 规则/数据 | Step 2–3 政策 + data-query + 输入自洽 | Step 1–2 章程 + 位次 + 层级对齐 |
-| 结构 | Step **6** structure-sanity（排完冲稳保后） | Step **3** structure-sanity（先看表结构） |
-| 专业 | Step **5** ADI + 2026 筛查 | Step **4** ADI + 社会现实 |
-| 交付 | Step 7–8 矩阵 + 报告 | Step 5 评级报告 |
-| 门禁 | Step **9** 自检 + **检查记录** | Step 6–7 终止判断 + **检查记录** |
+| 结构 | Step **7** structure-sanity（排完冲稳保后） | Step **3** structure-sanity（先看表结构） |
+| 专业 | Step **4–6** 全景 → 逐题收窄 → 标记 → ADI + 2026 筛查 | Step **4** ADI + 社会现实 |
+| 交付 | Step 8–9 矩阵 + 报告 | Step 5 评级报告 |
+| 门禁 | Step **10** 自检 + **检查记录** | Step 6–7 终止判断 + **检查记录** |
 
 **评估注意**：Step3 结构问题与 Step4 ADI ❌ 叠加时，报告「七、结构问题」与「建议替换」须同时写清；必要时评级 D → 切 A。
 
@@ -162,7 +173,7 @@ name: gaokao-volunteer-er
 | 路径                                                         | 内容                     |
 | ---------------------------------------------------------- | ---------------------- |
 | [workflows/modes-cdef.md](workflows/modes-cdef.md) | 辅模式 C/D/E/F 三步流程 |
-| [workflows/recommendation.md](workflows/recommendation.md) | 推荐 9 步流程               |
+| [workflows/recommendation.md](workflows/recommendation.md) | 推荐 10 步流程               |
 | [workflows/evaluation.md](workflows/evaluation.md)         | 评估 8 步流程（Step 0–7）     |
 | [shared/](shared/README.md)                                | 共享 reference（数据/职业/模板） |
 | [shared/weight-framework.md](shared/weight-framework.md)   | 评估/推荐/ADI 权重           |
@@ -175,6 +186,10 @@ name: gaokao-volunteer-er
 | [workflows/supplemental-batches.md](workflows/supplemental-batches.md) | 专科批与征集 |
 | [shared/new-major-guide.md](shared/new-major-guide.md)   | **2026** 目录新增专业五步筛查 |
 | [shared/structure-sanity-check.md](shared/structure-sanity-check.md) | 志愿结构合理性检查 |
+| [shared/anti-hallucination.md](shared/anti-hallucination.md) | 反幻觉与交付自检 |
+| [shared/step-artifacts.md](shared/step-artifacts.md) | **分步产出物**与 `outputs/{case-id}/` 规范 |
+| [shared/agent-handoff.md](shared/agent-handoff.md) | Agent 交接（读文件，不读长对话） |
+| [outputs/README.md](outputs/README.md) | 案例产出目录说明 |
 | [examples.md](examples.md)                                 | 15 个完整对话实例 |
 | [reference.md](reference.md)                               | 规则术语                   |
 
@@ -204,5 +219,5 @@ name: gaokao-volunteer-er
 - 说人话，先结论后解释
 - 每个建议带依据（位次 / 排斥项 / 就业报告 / 行业周期）
 - 性别仅在有公开供需或制度数据时使用
-- 方向包和评估报告必须含**同分数段真人路径实例**
+- 方向全景 / 方向条目 / 评估报告必须含**同分数段真人路径实例**（全景中每条 ✅/⚠️ 至少一行实例或「待查就业报告」）
 - 模式 A/B 交付物**必须含「交付前检查记录」**（见 [anti-hallucination.md](shared/anti-hallucination.md)）

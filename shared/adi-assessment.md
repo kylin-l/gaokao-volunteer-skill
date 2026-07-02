@@ -1,6 +1,6 @@
 # ADI 四维专业匹配评估
 
-用于**筛选专业方向**和**校验志愿表中的专业选择**。推荐 Step 5、评估 Step 4 使用。
+用于**筛选专业方向**和**校验志愿表中的专业选择**。推荐 Step 6、评估 Step 4 使用。
 
 与 [intake-8d.md](intake-8d.md)（硬信息）、[guided-discovery.md](guided-discovery.md)（情境引导）分工：本文件做**结构化打分**。
 
@@ -93,10 +93,10 @@ ADI综合 = A × D × I × R   （各维度 1–5 整数）
 | 情况 | 处理 |
 |------|------|
 | 用户说「喜欢」但排斥项触发 | I=1，ADI 否决 |
-| 家长喜欢，学生 I≤2 | 方向包中分列家庭/个人 ADI |
+| 家长喜欢，学生 I≤2 | 方向条目中分列家庭/个人 ADI |
 | 性别相关 | 仅在有公开供需数据时微调 D，不做刻板能力判断 |
 
-## 输出格式（嵌入方向包 / 评估报告）
+## 输出格式（嵌入方向全景条目 / 评估报告）
 
 ```markdown
 ### ADI 评估：[专业名]
@@ -125,7 +125,7 @@ ADI综合 = A × D × I × R   （各维度 1–5 整数）
 
 ## 衔接
 
-- 问卷前： [guided-discovery.md](guided-discovery.md) 缩小方向
+- 问卷前： [guided-discovery.md](guided-discovery.md) 全景 → 逐题收窄 → 标记
 - 问卷后： [career-prospects-6d.md](career-prospects-6d.md) 补结构化数据
 - 2026目录新增： [new-major-guide.md](new-major-guide.md) 加严 D、双路径、志愿层级
 - 权重如何用于排序/评级： [weight-framework.md](weight-framework.md)

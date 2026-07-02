@@ -46,7 +46,7 @@
 
 | 场景 | 先用 | 再用 |
 |------|------|------|
-| 「不知道填什么」 | guided-discovery 情境题 + 方向包 | adi-assessment → 本表补全 P0 |
+| 「不知道填什么」 | guided-discovery 情境题（一次一题）→ **方向全景** | 逐题收窄 → 标记 → adi-assessment 深评 → 本表补全 P0 |
 | 已有明确志愿表 | 本表 P0–P2 | ADI 校验 → 直接评估 |
 | 家长/孩子冲突 | guided-discovery + social-reality | adi-assessment → 本表 P5–P7 |
 | 艺术/体育/军警/专项等 | [special-admissions.md](special-admissions.md) | 再填本表；**勿用普通批默认** |
