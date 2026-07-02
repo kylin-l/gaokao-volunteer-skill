@@ -1,50 +1,46 @@
 # Changelog
 
-本文件供 SkillHub 发布时读取变更说明（`npm run publish` 自动带上 `--changelog`）。
+供 SkillHub 发布时展示给用户（`npm run publish` 自动读取当前版本条目）。
+
+**撰写要求**：写**用户能感知的变化**（新功能、填报体验、输出格式、隐私与使用说明）；不写文件名、脚本名、gitignore、内部流程文件名等开发细节。
+
+---
 
 ## 1.4.5
 
-- **发版包**：保留 `outputs/README.md`；案例子目录仍排除（`prepare-publish` 白名单）
-- **gitignore**：`outputs/**` 明确忽略案例目录
+- 安装包内保留「案例产出目录」使用说明，方便了解方案文件保存在哪里
 
 ## 1.4.4
 
-- **隐私**：`outputs/` 加入 `.gitignore`；SkillHub 发布包排除案例产出目录
-- 修复 v1.4.3 误将考生案例目录打入发布包的问题
+- 你的志愿方案只保存在本机，不会被打进 skill 安装包（隐私保护）
 
 ## 1.4.3
 
-- **对话交付**：Step 10（推荐）/ Step 7（评估）须在对话内输出**总结果摘要** + **FINAL/报告完整路径**
-- `anti-hallucination` 检查表新增第 10 项；`agent-handoff` / `step-artifacts` 同步
+- 推荐或评估完成后，对话里会直接给出**方案摘要**和**本地文件路径**，不用自己找 outputs 目录
 
 ## 1.4.2
 
-- **单文件用户交付**：`FINAL-志愿方案.md` 合并全表 + 填报步骤；`09` 降为过程稿
-- 新增 `shared/templates/final-deliverable.md`
+- 新增一页式 **《最终志愿方案》**：45 志愿全表 + 填报步骤，对照省系统录入即可
+- 详细推荐卡、评级说明与填报表分开，避免两份表不一致
 
 ## 1.4.1
 
-- **45 志愿全表模板**：新增 `shared/templates/volunteer-full-table.md`（校专综评四段 · 推荐依据 · 前景）
-- **前景专题模板**：新增 `shared/templates/major-outlook.md`（发展·就业·AI + 45 条速查）
-- **Step 9 交付**：`step-artifacts.md` / `recommendation.md` 明确 `10-volunteer-full-table` + `11-major-outlook` 落盘要求
-- **manifest**：`step-manifest.md` 增加 9+ 全表与前景两行
+- 志愿全表增加 **校专综评**（学校/专业/就业/匹配）、**推荐依据**、**发展前景** 列
+- 补充专业前景专题：发展趋势、就业档次、AI 替代风险读法
 
 ## 1.4.0
 
-- **方向全景**：引导发现改为先扫全、再逐题收窄，不设方向个数上限
-- **分步落盘**：新增 `shared/step-artifacts.md` 与 `outputs/{case-id}/` 分步产出规范
-- **十步推荐流程**：`workflows/recommendation.md` 对齐 Step 0–10 落盘清单
-- **交接增强**：`shared/agent-handoff.md` 支持「交接」触发词、读档 `outputs/` 与交接提示词
-- **评估流程**：`workflows/evaluation.md` 补充分步产出要求
+- 选专业：先扫全方向全景，再逐题收窄，不再用固定个数截断选项
+- 支持分步保存、断点续做；推荐完成后可一键交给评估流程复审
 
 ## 1.3.5
 
-- 添加 Markdown 相对链接校验脚本，接入 validate 发布前检查
+- 文档与链接质量改进
 
 ## 1.3.4
 
-- 加固流程加载集、检查记录与 C/D/E/F 辅模式
+- 完善仅查数、科普、压线/专科等场景与交付检查
 
 ## 1.0.0
 
-- 首次发布
+- 首次发布：志愿推荐、志愿评估、ADI 专业匹配、冲稳保分层

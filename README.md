@@ -122,7 +122,7 @@ npm run publish:dry-run
 npm run publish
 ```
 
-**变更说明**：SkillHub 不会从 git commit 推断 changelog；未传 `--changelog` 时会显示默认「首次发布」。发版前请在 `CHANGELOG.md` 补充与 `SKILL.md` 中 `version` 一致的 `## x.y.z` 条目，`npm run publish` 会自动拼接并上传。
+**变更说明**：在 `CHANGELOG.md` 补充与 `SKILL.md` 中 `version` 一致的 `## x.y.z` 条目；**面向用户**写能感知的变化，勿写 gitignore、脚本名等开发细节（见 `CHANGELOG.md` 顶部说明）。
 
 `prepare:publish` 会生成 `.skillhub-publish/`，仅包含白名单内文件；许可证见 `LICENSE.md`。
 
