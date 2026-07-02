@@ -5,3 +5,7 @@ node_modules/
 .env
 .env.*
 .skillhub-publish/
+
+# 案例产出含考生位次/志愿，勿提交公开仓库或 SkillHub 包
+outputs/*
+!outputs/README.md

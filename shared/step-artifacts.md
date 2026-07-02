@@ -31,7 +31,7 @@ outputs/{case-id}/
 |--------|------|------|
 | 1 | 用户项目根 `outputs/{case-id}/` | 默认 |
 | 2 | skill 仓库旁 `gaokao-volunteer-skills/outputs/{case-id}/` | 无独立项目时 |
-| 3 | 仅对话输出 | **须**注明「应保存为 `outputs/...`」并给出完整 Markdown |
+| 3 | 仅对话输出 | **须**注明「应保存为 `outputs/...`」并给出完整 Markdown；**案例目录勿提交 git / 勿打入 SkillHub 包** |
 
 **每步完成时**：更新 `manifest.md` 对应行（状态 ✅ / 待补 / 跳过及原因）。
 

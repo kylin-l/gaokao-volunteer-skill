@@ -16,7 +16,7 @@ const ALLOWED = new Set([
   '.png', '.jpg', '.jpeg', '.svg', '.gif',
 ]);
 
-const SKIP_DIRS = new Set(['.git', '.skillhub-publish', 'node_modules', 'scripts']);
+const SKIP_DIRS = new Set(['.git', '.skillhub-publish', 'node_modules', 'scripts', 'outputs']);
 
 function shouldCopy(relPath, name) {
   if (SKIP_DIRS.has(name)) return false;
