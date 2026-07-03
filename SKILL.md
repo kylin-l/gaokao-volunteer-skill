@@ -1,7 +1,7 @@
 ---
 slug: gaokao-volunteer-er
 displayName: 高考志愿 · 评估与推荐
-version: 1.4.7
+version: 1.4.8
 summary: >-
   高考志愿填报统一入口：评估志愿表、冲稳保推荐、引导式专业发现、ADI 四维匹配与社会现实对照。
 description: >-
